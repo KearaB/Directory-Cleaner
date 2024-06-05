@@ -15,3 +15,43 @@ Before you can run this script, you need to have `Python` installed on your mach
 
 ## Installation
 ### 1. Clone Repository
+```bash
+git clone https://github.com/KearaB/Directory-Cleaner.git
+cd Directory-Cleaner
+```
+
+### 2. Install Required Python Modules
+Ensure Python and pip are installed on your system, then run:
+```bash
+pip install watchdog
+```
+This command will install the `watchdog` library needed for the script to function.
+
+## Configuration
+Edit the `configs/file_paths.json` file to set up your specific file paths and file types. Here's a sample configuration:
+```json
+{
+    "file_paths": {
+        ".pdf": "C:\\Users\\x\\Downloads\\documents",
+        ".py": "C:\\Users\\x\\Downloads\\scripts"
+        // Add more file types and paths as needed
+    },
+    "downloads_dir": "C:\\Users\\x\\Downloads"
+}
+```
+
+## Running the script
+To run the script on your local device, execute:
+```bash
+python main.py
+```
+This will start monitoring the specified downloads directory and automatically organize incoming files into the appropriate folders.
+
+## Adapting for macOS and Linux
+The script is written for Windows by default. To adapt it for macOS or Linux:
+
+* Change the file paths in `configs/file_paths.json` to match the Unix-like file system structure, e.g., `/Users/x/Downloads/documents`.
+* Modify any path-related code in `main.py` to use Unix-style paths if necessary.
+
+## Contribution
+Feel free to fork this project and submit pull requests. You can also open an issue if you find bugs or have feature requests.
